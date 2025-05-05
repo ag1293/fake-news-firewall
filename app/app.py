@@ -1,5 +1,6 @@
 import streamlit as st
 import requests
+from app.model import predict_credibility
 
 st.set_page_config(page_title="Fake News Firewall", layout="centered")
 
@@ -16,10 +17,9 @@ if st.button("Check Credibility"):
         # Send input to FastAPI backend
         with st.spinner("Analyzing..."):
             try:
-                response = requests.post(
-                    "http://localhost:8000/predict",
-                    json={"text": user_input}
-                )
+                result = predict_credibility(user_input)
+                st.success(f"Prediction: **{result['label']}**")
+                st.metric(label="Trust Score", value=f"{100 - result['confidence']:.2f} / 100")
                 if response.status_code == 200:
                     result = response.json()
                     st.success(f"Prediction: **{result['label']}**")
