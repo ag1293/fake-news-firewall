@@ -2,6 +2,9 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from app.data_preprocessing import load_and_prepare_data
 import numpy as np
+import joblib
+joblib.dump(clf, "model/fake_news_model.pkl")
+
 
 # Load and prepare data
 X_train, X_test, y_train, y_test = load_and_prepare_data()
