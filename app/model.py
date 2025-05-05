@@ -7,8 +7,9 @@ from sklearn.model_selection import train_test_split
 
 # Load and prepare data
 def load_and_prepare_data():
-    df_fake = pd.read_csv("data/Fake.csv")
-    df_true = pd.read_csv("data/True.csv")
+    df_fake = pd.read_csv("data/Fake_small.csv")
+    df_true = pd.read_csv("data/True_small.csv")
+
 
     df_fake['label'] = 'Fake'
     df_true['label'] = 'Real'

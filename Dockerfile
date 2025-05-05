@@ -16,5 +16,6 @@ EXPOSE 8501
 EXPOSE 8000
 
 # Run both frontend and backend
-CMD ["streamlit", "run", "app/app.py", "--server.port=8501", "--server.enableCORS=false"]
+CMD ["streamlit", "run", "app/app.py", "--server.port=8501", "--server.headless=true"]
+
 
