@@ -1,5 +1,5 @@
 
-from app.model import predict_credibility 
+from model import predict_credibility
 import streamlit as st
 
 st.set_page_config(page_title="Fake News Firewall", layout="centered")
