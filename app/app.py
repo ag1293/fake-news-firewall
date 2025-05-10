@@ -2,7 +2,7 @@
 from dotenv import load_dotenv
 import os
 load_dotenv()
-NEWS_API_KEY = os.getenv("ff7e4a4c937747dca33679c8360802bc")
+NEWS_API_KEY = os.getenv("NEWS_API_KEY")
 from model import predict_credibility
 import streamlit as st
 import requests
