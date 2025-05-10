@@ -16,11 +16,11 @@ st.write("Check the credibility of a news headline or short article.")
 user_input = st.text_area("Enter a news headline or short article:")
 
 st.markdown("---")
-st.header("📰 Check Live News from India")
+st.header("📰 Check Live News")
 
 if st.button("Fetch & Analyze Headlines"):
     try:
-        url = f"https://newsapi.org/v2/top-headlines?country=in&apiKey={NEWS_API_KEY}"
+        url = f"https://newsapi.org/v2/everything?q=AI&sortBy=publishedAt&language=en&apiKey={NEWS_API_KEY}"
         response = requests.get(url)
         news_data = response.json()
 
