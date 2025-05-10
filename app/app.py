@@ -24,6 +24,10 @@ if st.button("Fetch & Analyze Headlines"):
         response = requests.get(url)
         news_data = response.json()
 
+        # 🔍 Debug output
+        st.write("📡 Response:", response.status_code)
+        st.json(news_data)
+
         for article in news_data["articles"][:10]:  # Top 10 articles
             title = article["title"]
             if title:
