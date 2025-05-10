@@ -20,7 +20,7 @@ st.header("📰 Check Live News from India")
 
 if st.button("Fetch & Analyze Headlines"):
     try:
-        url = f"https://newsapi.org/v2/top-headlines?country=in&apiKey={ff7e4a4c937747dca33679c8360802bc}"
+        url = f"https://newsapi.org/v2/top-headlines?country=in&apiKey={NEWS_API_KEY}"
         response = requests.get(url)
         news_data = response.json()
 
